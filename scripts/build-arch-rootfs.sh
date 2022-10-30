@@ -26,8 +26,8 @@ Description=Firecracker Network
 [Service]
 Type=oneshot
 ExecStart=ip link set eth0 up
-ExecStart=ip addr add 172.16.0.2/24 dev eth0
-ExecStart=ip route add default via 172.16.0.1 dev eth0
+ExecStart=ip addr add 192.168.0.122/24 dev eth0
+ExecStart=ip route add default via 192.168.0.1 dev eth0
 RemainAfterExit=yes
 
 [Install]
