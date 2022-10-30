@@ -10,7 +10,7 @@ cd build
 # pacman -Syu base-devel bc pahole --ignore linux-firmware
 
 ## Get kernel source
-+curl -o linux.tar.xz "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-$KERNEL_VERSION.tar.xz"
+curl -o linux.tar.xz "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-$KERNEL_VERSION.tar.xz"
 tar xf linux.tar.xz
 cd linux-$KERNEL_VERSION/
 
@@ -33,9 +33,9 @@ sed 's/\(.*\)VIDEO\(.*\)=y/\1VIDEO\2=n/g' -i .config
 sed 's/\(.*\)WLAN\(.*\)=y/\1WLAN\2=n/g' -i .config
 sed 's/\(.*\)DRM\(.*\)=y/\1DRM\2=n/g' -i .config
 
-cat ../../config/virtio.config >> .config
-cat ../../config/fs.config >> .config
-cat ../../config/net.config >> .config
+# cat ../../config/virtio.config >> .config
+# cat ../../config/fs.config >> .config
+# cat ../../config/net.config >> .config
 
 ## Add KVM guest support
 make kvm_guest.config
